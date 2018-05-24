@@ -10,7 +10,7 @@ class Library
   end
 
   def include?(book_title)
-    books.any? do |book|
+    @books.any? do |book|
       book.title == book_title
     end
   end
@@ -19,6 +19,20 @@ class Library
     @books.sort_by do |book|
       book.author_last_name
     end
+  end
+
+  def find_by_author(author)
+    books_by_author = {}
+    @books.each do |book|
+      author_full_name = book.author_first_name + ' ' + book.author_last_name
+      if author_full_name == author
+        books_by_author[book.title] = book
+      end
+    end
+    return books_by_author
+  end
+
+  def find_by_publication_date(date)
   end
 
 end
