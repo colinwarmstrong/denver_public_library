@@ -33,6 +33,13 @@ class Library
   end
 
   def find_by_publication_date(date)
+    books_by_date = {}
+    @books.each do |book|
+      if book.publication_date == date
+        books_by_date[book.title] = book
+      end
+    end
+    return books_by_date
   end
 
 end
