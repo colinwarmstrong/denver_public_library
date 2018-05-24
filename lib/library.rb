@@ -9,4 +9,10 @@ class Library
     @books << book
   end
 
+  def include?(book_title)
+    books.any? do |book|
+      book.title == book_title
+    end
+  end
+
 end
