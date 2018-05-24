@@ -1,5 +1,5 @@
 require './test/test_helper'
-require './lib/book.rb'
+require './lib/library.rb'
 require './lib/author.rb'
 
 class AuthorTest < Minitest::Test
